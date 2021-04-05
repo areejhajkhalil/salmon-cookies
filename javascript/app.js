@@ -243,3 +243,61 @@ Dubai.Calculatecustomerseveryhour();
 Dubai.calculateCookiesforeveyCustomer();
 Dubai.render();
 
+/*************************************************************************/
+
+let Tokyo = {
+    shopplaes: 'Tokyo',
+    Min: 3,
+    Max: 38,
+    Cookies: 1.2,
+    total: 0,
+    customerseveryhour: [],
+    CookiesforeveyCustomer: [],
+
+    Calculatecustomerseveryhour: function () {
+        for (let i = 0; i < workinghours.length; i++) {
+            this.customerseveryhour.push(random(this.Min, this.Max))
+
+
+        }
+    },
+    calculateCookiesforeveyCustomer: function () {
+        for (let i = 0; i < this.customerseveryhour.length; i++) {
+
+            this.CookiesforeveyCustomer.push(Math.floor(this.customerseveryhour[i] * this.Cookies));
+            this.total += this.CookiesforeveyCustomer
+        }
+
+
+    },
+    render: function () {
+        
+        let parent = document.getElementById('parent')
+        
+        let shoplocation = document.createElement('h3')
+        
+        parent.appendChild(shoplocation);
+       
+        shoplocation.textContent = this.shopplace;
+        
+        let ullistelement = document.createElement('ul');
+        
+        parent.appendChild(ullistelement);
+        
+        for (let i = 0; i < workinghours.length; i++) {
+            let li = document.createElement('li');
+            ullistelement.appendChild(li);
+            li.textContent = `${workinghours[i]}: ${this.CookiesforeveyCustomer[i]} cookies`
+        }
+        let total2 = document.createElement('li');
+        ullistelement.appendChild(total2);
+        total2.textContent = `Total: ${this.total}cookies `
+    }
+    
+
+
+}; 
+Tokyo.Calculatecustomerseveryhour();
+Tokyo.calculateCookiesforeveyCustomer();
+Tokyo.render();
+
