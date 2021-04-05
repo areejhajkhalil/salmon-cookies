@@ -186,7 +186,7 @@ paris.calculateCookiesforeveyCustomer();
 paris.render();
 
 /********************************************************************/
-/*
+
 let Dubai = {
     shopplaes: 'Dubai',
     Min: 11,
@@ -242,4 +242,4 @@ let Dubai = {
 Dubai.Calculatecustomerseveryhour();
 Dubai.calculateCookiesforeveyCustomer();
 Dubai.render();
-*/
+
